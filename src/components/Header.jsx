@@ -1,5 +1,6 @@
 import React from 'react';
-import { Database, PlusCircle, Terminal, Heart, Sparkles, Activity } from 'lucide-react';
+import { Database, PlusCircle, Terminal, Sparkles, Activity } from 'lucide-react';
+import snowflakeLogo from '../assets/snowflake_logo.png';
 import { SNOWFLAKE_METADATA } from '../data/mockSnowflakeData';
 
 export default function Header({ onOpenDispatcher, onToggleConsole, showConsole, stats }) {
@@ -29,13 +30,24 @@ export default function Header({ onOpenDispatcher, onToggleConsole, showConsole,
             width: '42px',
             height: '42px',
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, #10b981 0%, #0284c7 100%)',
+            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(2, 132, 199, 0.3) 100%)',
+            border: '1px solid rgba(56, 189, 248, 0.4)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 0 20px rgba(16, 185, 129, 0.4)',
+            boxShadow: '0 0 20px rgba(56, 189, 248, 0.3)',
+            overflow: 'hidden',
           }}>
-            <Heart size={22} color="#ffffff" fill="#ffffff" />
+            <img
+              src={snowflakeLogo}
+              alt="FoodBridge Snowflake Logo"
+              style={{
+                width: '32px',
+                height: '32px',
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 0 6px rgba(56, 189, 248, 0.8))',
+              }}
+            />
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

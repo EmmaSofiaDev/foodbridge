@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowRight, Flame, Database, HeartHandshake, Leaf, TrendingUp, ShieldCheck, PlayCircle } from 'lucide-react';
+import { ArrowRight, Flame, Database, Leaf, TrendingUp, ShieldCheck, PlayCircle } from 'lucide-react';
 
 export default function HeroSection({ onOpenDispatcher, onToggleConsole }) {
   const [wastedTons, setWastedTons] = useState(1300000000);
@@ -14,50 +14,29 @@ export default function HeroSection({ onOpenDispatcher, onToggleConsole }) {
 
   return (
     <section style={{
-      padding: '72px 24px 48px 24px',
+      padding: '56px 24px 48px 24px',
       maxWidth: '1360px',
       margin: '0 auto',
       position: 'relative',
       textAlign: 'center',
     }}>
-      {/* Centered Pill */}
-      <div style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '8px',
-        background: 'rgba(16, 185, 129, 0.12)',
-        border: '1px solid rgba(16, 185, 129, 0.3)',
-        padding: '8px 18px',
-        borderRadius: '9999px',
-        marginBottom: '28px',
-        backdropFilter: 'blur(10px)',
-      }}>
-        <HeartHandshake size={16} color="#10b981" />
-        <span style={{ fontSize: '0.82rem', fontWeight: '700', color: '#6ee7b7', letterSpacing: '0.02em' }}>
-          DEV Weekend Challenge: Generosity Edition • UN International Day of Charity
-        </span>
-      </div>
-
       {/* Hero Headline */}
       <h1 style={{
-        fontSize: 'clamp(2.4rem, 5.2vw, 4.2rem)',
+        fontSize: 'clamp(2.6rem, 5.5vw, 4.5rem)',
         fontWeight: '800',
-        lineHeight: '1.12',
+        lineHeight: '1.15',
         color: '#ffffff',
         marginBottom: '24px',
         letterSpacing: '-0.03em',
-        maxWidth: '1080px',
+        maxWidth: '960px',
         marginLeft: 'auto',
         marginRight: 'auto',
       }}>
-        Turning Commercial Food Surplus into <br />
-        <span style={{
+        Real-Time <span style={{
           background: 'linear-gradient(135deg, #10b981 0%, #38bdf8 100%)',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
-        }}>
-          Real-Time Rescue Logistics
-        </span>
+        }}>Food Rescue Grid</span>
       </h1>
 
       {/* Subtitle */}
