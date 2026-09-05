@@ -1,7 +1,27 @@
 import React from 'react';
 import { Database, PlusCircle, Terminal, Sparkles, Activity } from 'lucide-react';
-import snowflakeLogo from '../assets/snowflake_logo.png';
 import { SNOWFLAKE_METADATA } from '../data/mockSnowflakeData';
+
+// Brand Logo Icon (matching tab favicon)
+function BrandLogoIcon({ size = 24, color = '#10b981', strokeWidth = 2.2 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={color}
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ filter: 'drop-shadow(0 0 8px rgba(16, 185, 129, 0.6))' }}
+    >
+      <path d="M12 2a10 10 0 1 0 10 10H12V2z" />
+      <path d="M12 12 2.1 12a10.1 10.1 0 0 0 1.9 4.3" />
+      <path d="M12 12l4 8.5" />
+    </svg>
+  );
+}
 
 export default function Header({ onOpenDispatcher, onToggleConsole, showConsole, stats }) {
   return (
@@ -30,24 +50,14 @@ export default function Header({ onOpenDispatcher, onToggleConsole, showConsole,
             width: '42px',
             height: '42px',
             borderRadius: '12px',
-            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.2) 0%, rgba(2, 132, 199, 0.3) 100%)',
-            border: '1px solid rgba(56, 189, 248, 0.4)',
+            background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.16) 0%, rgba(6, 182, 212, 0.12) 100%)',
+            border: '1px solid rgba(16, 185, 129, 0.4)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 0 20px rgba(56, 189, 248, 0.3)',
-            overflow: 'hidden',
+            boxShadow: '0 0 20px rgba(16, 185, 129, 0.35)',
           }}>
-            <img
-              src={snowflakeLogo}
-              alt="FoodBridge Snowflake Logo"
-              style={{
-                width: '32px',
-                height: '32px',
-                objectFit: 'contain',
-                filter: 'drop-shadow(0 0 6px rgba(56, 189, 248, 0.8))',
-              }}
-            />
+            <BrandLogoIcon size={24} color="#10b981" strokeWidth={2.3} />
           </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
