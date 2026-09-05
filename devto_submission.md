@@ -2,7 +2,7 @@
 title: We Throw Away 1.3 Billion Tons of Food While Millions Starve. I Built FoodBridge with Snowflake to Stop It
 published: false
 tags: devchallenge, weekendchallenge, snowflake, webdev
-cover_image: https://raw.githubusercontent.com/REPLACE_WITH_USERNAME/foodbridge/main/public/images/cover.jpg
+cover_image: https://raw.githubusercontent.com/EmmaSofiaDev/foodbridge/main/public/images/cover.jpg
 ---
 
 *This is a submission for [Weekend Challenge: Generosity Edition](https://dev.to/challenges/weekend-2026-09-03)*
@@ -42,7 +42,7 @@ Instead of food sitting on loading docks waiting for slow manual phone calls, Fo
 3. **Snowflake Analytical Engine:** Matches perishable batches with the nearest shelter facing that specific nutritional deficit, ranking deliveries by urgent expiration windows.
 4. **EPA WARM Carbon Accounting:** Every single pound of rescued food is audited using EPA Waste Reduction Model formulas to calculate real metric tons of greenhouse gas averted from landfills.
 
-![FoodBridge Hero Interface](https://raw.githubusercontent.com/REPLACE_WITH_USERNAME/foodbridge/main/public/images/screenshot_hero.png)
+![FoodBridge Hero Interface](https://raw.githubusercontent.com/EmmaSofiaDev/foodbridge/main/public/images/screenshot_hero.png)
 
 ### The Numbers That Drove the Architecture
 
@@ -58,14 +58,14 @@ Assistive logistics require understanding the physical realities of food waste:
 
 Experience the live application directly in your browser:
 
-* **Live Web Application:** [https://REPLACE_WITH_USERNAME.github.io/foodbridge/](https://REPLACE_WITH_USERNAME.github.io/foodbridge/)
-* **GitHub Repository:** [https://github.com/REPLACE_WITH_USERNAME/foodbridge](https://github.com/REPLACE_WITH_USERNAME/foodbridge)
+* **Live Web Application:** [https://EmmaSofiaDev.github.io/foodbridge/](https://EmmaSofiaDev.github.io/foodbridge/)
+* **GitHub Repository:** [https://github.com/EmmaSofiaDev/foodbridge](https://github.com/EmmaSofiaDev/foodbridge)
 
 ### Interactive Walkthrough & Simulator
 
 To let judges explore the system without waiting for a commercial store closing shift, FoodBridge includes a full interactive simulation suite:
 
-![Live Food Surplus Inventory](https://raw.githubusercontent.com/REPLACE_WITH_USERNAME/foodbridge/main/public/images/screenshot_inventory.png)
+![Live Food Surplus Inventory](https://raw.githubusercontent.com/EmmaSofiaDev/foodbridge/main/public/images/screenshot_inventory.png)
 
 * **Live Surplus Inventory Feed:** Browse active batches with live countdown badges (Critical, High, Medium) and direct volunteer courier dispatch.
 * **Instant Rescue Simulator:** Click "Simulate Rescue" in the top bar to log a new batch (e.g. 150 lbs of fresh heirloom produce from Whole Foods) and watch FoodBridge calculate the nearest shelter with an active produce deficit.
@@ -77,7 +77,7 @@ To let judges explore the system without waiting for a commercial store closing 
 
 The entire codebase is open source under the MIT License:
 
-* **Source Code:** [https://github.com/REPLACE_WITH_USERNAME/foodbridge](https://github.com/REPLACE_WITH_USERNAME/foodbridge)
+* **Source Code:** [https://github.com/EmmaSofiaDev/foodbridge](https://github.com/EmmaSofiaDev/foodbridge)
 
 Built with a clean, fast stack:
 * **Frontend:** React 19, Vite, TailwindCSS, Lucide Icons
@@ -119,7 +119,7 @@ ORDER BY r.hours_remaining ASC;
 
 This ensures that hot-held meals expiring in 2 hours are prioritized for immediate van dispatch, while ambient sourdough loaves with a 6-hour window are queued appropriately without manual triage.
 
-![Snowflake SQL Console](https://raw.githubusercontent.com/REPLACE_WITH_USERNAME/foodbridge/main/public/images/screenshot_console.png)
+![Snowflake SQL Console](https://raw.githubusercontent.com/EmmaSofiaDev/foodbridge/main/public/images/screenshot_console.png)
 
 ### 2. Micro-Partition Clustering for Zero-Waste Speed
 

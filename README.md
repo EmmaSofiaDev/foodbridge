@@ -117,7 +117,7 @@ ORDER BY total_lbs_diverted DESC;
 ### Quickstart
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/foodbridge.git
+git clone https://github.com/EmmaSofiaDev/foodbridge.git
 
 # Navigate into directory
 cd foodbridge
