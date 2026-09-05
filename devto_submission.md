@@ -69,6 +69,9 @@ To let judges explore the system without waiting for a commercial store closing 
 
 * **Live Surplus Inventory Feed:** Browse active batches with live countdown badges (Critical, High, Medium) and direct volunteer courier dispatch.
 * **Instant Rescue Simulator:** Click "Simulate Rescue" in the top bar to log a new batch (e.g. 150 lbs of fresh heirloom produce from Whole Foods) and watch FoodBridge calculate the nearest shelter with an active produce deficit.
+
+![FoodBridge Surplus Dispatcher Simulation](https://raw.githubusercontent.com/EmmaSofiaDev/foodbridge/main/public/images/screenshot_dispatcher.png)
+
 * **Snowflake SQL Console:** Click "SQL Console" to inspect and run real production Snowflake queries with sub-second execution times and partition pruning metrics.
 
 ---
