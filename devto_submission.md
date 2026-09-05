@@ -2,7 +2,7 @@
 title: We Throw Away 1.3 Billion Tons of Food While Millions Starve. I Built FoodBridge with Snowflake to Stop It
 published: false
 tags: devchallenge, weekendchallenge, snowflake, webdev
-cover_image: https://raw.githubusercontent.com/EmmaSofiaDev/foodbridge/main/public/images/cover_v2.png
+cover_image: https://raw.githubusercontent.com/EmmaSofiaDev/foodbridge/main/public/images/cover.jpg
 ---
 
 *This is a submission for [Weekend Challenge: Generosity Edition](https://dev.to/challenges/weekend-2026-09-03)*
