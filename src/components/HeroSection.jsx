@@ -1,150 +1,138 @@
-import React from 'react';
-import { ArrowRight, Flame, Database, ShieldAlert, HeartHandshake, Leaf } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ArrowRight, Flame, Database, HeartHandshake, Leaf, TrendingUp, ShieldCheck, PlayCircle } from 'lucide-react';
 
 export default function HeroSection({ onOpenDispatcher, onToggleConsole }) {
+  const [wastedTons, setWastedTons] = useState(1300000000);
+
+  // Live real-time food waste ticking counter (approx 41 tons per second globally)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setWastedTons(prev => prev + 41);
+    }, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section style={{
-      padding: '48px 24px 32px 24px',
+      padding: '72px 24px 48px 24px',
       maxWidth: '1360px',
       margin: '0 auto',
       position: 'relative',
+      textAlign: 'center',
     }}>
-      {/* Background ambient glow */}
+      {/* Centered Pill */}
       <div style={{
-        position: 'absolute',
-        top: '10%',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        width: '600px',
-        height: '240px',
-        background: 'radial-gradient(ellipse at center, rgba(16, 185, 129, 0.15), transparent 70%)',
-        pointerEvents: 'none',
-        zIndex: 0,
-      }}></div>
+        display: 'inline-flex',
+        alignItems: 'center',
+        gap: '8px',
+        background: 'rgba(16, 185, 129, 0.12)',
+        border: '1px solid rgba(16, 185, 129, 0.3)',
+        padding: '8px 18px',
+        borderRadius: '9999px',
+        marginBottom: '28px',
+        backdropFilter: 'blur(10px)',
+      }}>
+        <HeartHandshake size={16} color="#10b981" />
+        <span style={{ fontSize: '0.82rem', fontWeight: '700', color: '#6ee7b7', letterSpacing: '0.02em' }}>
+          DEV Weekend Challenge: Generosity Edition • UN International Day of Charity
+        </span>
+      </div>
 
-      <div style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '880px', margin: '0 auto' }}>
-        {/* Generosity Edition Hackathon Badge */}
+      {/* Hero Headline */}
+      <h1 style={{
+        fontSize: 'clamp(2.4rem, 5.2vw, 4.2rem)',
+        fontWeight: '800',
+        lineHeight: '1.12',
+        color: '#ffffff',
+        marginBottom: '24px',
+        letterSpacing: '-0.03em',
+        maxWidth: '1080px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+      }}>
+        Turning Commercial Food Surplus into <br />
+        <span style={{
+          background: 'linear-gradient(135deg, #10b981 0%, #38bdf8 100%)',
+          WebkitBackgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
+        }}>
+          Real-Time Rescue Logistics
+        </span>
+      </h1>
+
+      {/* Subtitle */}
+      <p style={{
+        fontSize: 'clamp(1.1rem, 2vw, 1.3rem)',
+        color: '#94a3b8',
+        lineHeight: '1.65',
+        marginBottom: '40px',
+        maxWidth: '820px',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        fontWeight: '400',
+      }}>
+        Every evening, supermarkets discard thousands of pounds of fresh food while local shelters face severe protein deficits. <strong style={{ color: '#f8fafc' }}>FoodBridge</strong> pairs surplus inventory with emergency food pantries in sub-second <strong style={{ color: '#38bdf8' }}>Snowflake Data Cloud</strong> analytics.
+      </p>
+
+      {/* Action Buttons */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        gap: '16px',
+        flexWrap: 'wrap',
+        marginBottom: '54px',
+      }}>
+        <button onClick={onOpenDispatcher} className="btn-primary" style={{ padding: '14px 28px', fontSize: '1rem' }}>
+          <span>Simulate Surplus Rescue</span>
+          <ArrowRight size={18} />
+        </button>
+
+        <button onClick={onToggleConsole} className="btn-snowflake" style={{ padding: '14px 28px', fontSize: '1rem' }}>
+          <Database size={18} />
+          <span>Launch Snowflake SQL Console</span>
+        </button>
+      </div>
+
+      {/* Global Ticker Banner */}
+      <div className="glass-card" style={{
+        maxWidth: '920px',
+        margin: '0 auto',
+        padding: '24px 32px',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        flexWrap: 'wrap',
+        gap: '20px',
+        background: 'linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(6, 12, 24, 0.85) 100%)',
+        border: '1px solid rgba(255, 255, 255, 0.1)',
+      }}>
+        <div style={{ textAlign: 'left' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+            <span className="pulse-emerald"></span>
+            <span style={{ fontSize: '0.78rem', color: '#94a3b8', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: '700' }}>
+              Global Food Waste Paradox (Live Estimate)
+            </span>
+          </div>
+          <div style={{ fontSize: '1.6rem', fontWeight: '800', color: '#ffffff', fontFamily: 'var(--font-mono)' }}>
+            {wastedTons.toLocaleString()} <span style={{ fontSize: '0.9rem', color: '#f43f5e', fontWeight: '600' }}>tons this year</span>
+          </div>
+        </div>
+
         <div style={{
-          display: 'inline-flex',
+          display: 'flex',
           alignItems: 'center',
-          gap: '8px',
-          background: 'rgba(16, 185, 129, 0.12)',
-          border: '1px solid rgba(16, 185, 129, 0.35)',
-          padding: '6px 14px',
-          borderRadius: '9999px',
-          marginBottom: '20px',
+          gap: '24px',
+          borderLeft: '1px solid rgba(255, 255, 255, 0.1)',
+          paddingLeft: '24px',
         }}>
-          <HeartHandshake size={15} color="#10b981" />
-          <span style={{ fontSize: '0.82rem', fontWeight: '600', color: '#6ee7b7' }}>
-            Built for DEV Weekend Challenge: Generosity Edition & UN Charity Day
-          </span>
-        </div>
-
-        {/* Impactful Title */}
-        <h1 style={{
-          fontSize: 'clamp(2.2rem, 4.5vw, 3.6rem)',
-          fontWeight: '800',
-          lineHeight: '1.15',
-          color: '#ffffff',
-          marginBottom: '20px',
-        }}>
-          We Throw Away <span style={{
-            background: 'linear-gradient(135deg, #f43f5e 0%, #fb7185 100%)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}>1.3 Billion Tons</span> of Food While People Starve.
-        </h1>
-
-        {/* Subtitle with core vision */}
-        <p style={{
-          fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)',
-          color: '#cbd5e1',
-          lineHeight: '1.6',
-          marginBottom: '32px',
-          fontWeight: '400',
-        }}>
-          FoodBridge connects commercial supermarkets, bakeries, and dining halls directly with local emergency shelters in real-time. Powered by <strong style={{ color: '#38bdf8' }}>Snowflake Data Cloud</strong>, we prioritize perishing inventory, match dietary deficits, and calculate EPA carbon mitigation in sub-second queries.
-        </p>
-
-        {/* Call to action buttons */}
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '14px', flexWrap: 'wrap' }}>
-          <button onClick={onOpenDispatcher} className="btn-primary" style={{ padding: '12px 24px', fontSize: '0.95rem' }}>
-            <span>Simulate Surplus Rescue</span>
-            <ArrowRight size={18} />
-          </button>
-          
-          <button onClick={onToggleConsole} className="btn-snowflake" style={{ padding: '12px 24px', fontSize: '0.95rem' }}>
-            <Database size={18} />
-            <span>Open Snowflake SQL Console</span>
-          </button>
-        </div>
-
-        {/* 3 Value Pillars */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-          gap: '16px',
-          marginTop: '44px',
-          textAlign: 'left',
-        }}>
-          <div className="glass-panel" style={{ padding: '20px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-              <div style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '8px',
-                background: 'rgba(244, 63, 94, 0.15)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-                <Flame size={18} color="#f43f5e" />
-              </div>
-              <h4 style={{ fontSize: '0.95rem', fontWeight: '700', color: '#ffffff' }}>Zero Landfill Waste</h4>
-            </div>
-            <p style={{ fontSize: '0.82rem', color: '#94a3b8', lineHeight: '1.5' }}>
-              Dynamic shelf-life decay monitoring ensures food is rerouted hours before expiration, not discarded.
-            </p>
+          <div style={{ textAlign: 'left' }}>
+            <div style={{ fontSize: '0.75rem', color: '#64748b', textTransform: 'uppercase', fontWeight: '600' }}>Food Insecure</div>
+            <div style={{ fontSize: '1.3rem', fontWeight: '800', color: '#38bdf8' }}>828 Million</div>
           </div>
-
-          <div className="glass-panel" style={{ padding: '20px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-              <div style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '8px',
-                background: 'rgba(2, 132, 199, 0.15)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-                <Database size={18} color="#38bdf8" />
-              </div>
-              <h4 style={{ fontSize: '0.95rem', fontWeight: '700', color: '#ffffff' }}>Snowflake Columnar Engine</h4>
-            </div>
-            <p style={{ fontSize: '0.82rem', color: '#94a3b8', lineHeight: '1.5' }}>
-              Micro-partition clustering aggregates citywide food deficits across 500+ shelters with sub-second queries.
-            </p>
-          </div>
-
-          <div className="glass-panel" style={{ padding: '20px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
-              <div style={{
-                width: '32px',
-                height: '32px',
-                borderRadius: '8px',
-                background: 'rgba(16, 185, 129, 0.15)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}>
-                <Leaf size={18} color="#10b981" />
-              </div>
-              <h4 style={{ fontSize: '0.95rem', fontWeight: '700', color: '#ffffff' }}>EPA Carbon Auditing</h4>
-            </div>
-            <p style={{ fontSize: '0.82rem', color: '#94a3b8', lineHeight: '1.5' }}>
-              Automatic EPA WARM model telemetry tracking methane and greenhouse gas avoidance per rescued pound.
-            </p>
+          <div style={{ textAlign: 'left' }}>
+            <div style={{ fontSize: '0.75rem', color: '#64748b', textTransform: 'uppercase', fontWeight: '600' }}>Dispatch Velocity</div>
+            <div style={{ fontSize: '1.3rem', fontWeight: '800', color: '#10b981' }}>&lt; 150 ms</div>
           </div>
         </div>
       </div>

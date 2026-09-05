@@ -6,6 +6,9 @@ node_modules
 # Production build
 dist
 
+# Local deployment scripts
+scripts/*.cjs
+
 # Environment variables
 .env
 .env.local
